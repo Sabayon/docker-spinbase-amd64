@@ -32,7 +32,7 @@ PACKAGES_TO_ADD=(
     "sys-auth/nss-mdns"
 )
 
-equo security oscheck || exit 1
+#equo security oscheck || exit 1
 
 # Make sure we have /boot/grub before installing
 # sabayon-artwork-grub (so that it's able to copy
