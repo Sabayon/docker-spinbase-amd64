@@ -43,10 +43,9 @@ mkdir -p /boot/grub
 equo repo mirrorsort sabayonlinux.org
 equo up
 
+equo i sys-apps/portage sys-apps/entropy app-admin/equo
 equo i app-crypt/gnupg
 equo up
-
-equo i sys-apps/entropy app-admin/equo
 
 equo u
 echo -5 | equo conf update
