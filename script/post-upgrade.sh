@@ -43,7 +43,7 @@ mkdir -p /boot/grub
 equo repo mirrorsort sabayonlinux.org
 equo up
 
-equo i --relaxed sys-apps/portage sys-apps/entropy 
+equo i --relaxed --norecursive sys-apps/portage sys-apps/entropy 
 equo i app-admin/equo
 equo i app-crypt/gnupg
 equo up
