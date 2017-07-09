@@ -48,7 +48,7 @@ equo i app-admin/equo
 equo i app-crypt/gnupg
 equo up
 
-equo u
+equo u || exit 1
 echo -5 | equo conf update
 
 #equo i $(cat /etc/sabayon-pkglist | xargs echo)
