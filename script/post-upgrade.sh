@@ -24,7 +24,6 @@ PACKAGES_TO_ADD=(
     "sys-devel/binutils"
     "app-misc/sabayon-version"
     "x11-themes/sabayon-artwork-grub"
-    "app-crypt/gnupg"
     "x11-themes/sabayon-artwork-isolinux"
     "app-crypt/shim-signed"
     "dev-perl/Module-Build"
@@ -43,6 +42,14 @@ mkdir -p /boot/grub
 
 equo repo mirrorsort sabayonlinux.org
 equo up
+
+equo i app-crypt/gnupg
+equo up
+
+equo i sys-apps/entropy app-admin/equo
+
+equo u
+echo -5 | equo conf update
 
 #equo i $(cat /etc/sabayon-pkglist | xargs echo)
 equo i "${PACKAGES_TO_ADD[@]}"
