@@ -50,9 +50,6 @@ equo i "${PACKAGES_TO_ADD[@]}"
 #small cleanup
 #equo rm --nodeps gnome-base/gsettings-desktop-schemas sys-libs/db:4.8
 
-# Cleaning accepted licenses
-rm -rf /etc/entropy/packages/license.accept
-
 # Configure glibc locale, ship image with all locales enabled
 # or anaconda will crash if the user selects an unsupported one
 echo '
@@ -135,6 +132,9 @@ equo cleanup
 
 # Writing package list file
 equo q list installed -qv > /etc/sabayon-pkglist
+
+# Cleaning accepted licenses
+rm -rf /etc/entropy/packages/license.accept
 
 # remove SSH keys
 rm -rf /etc/ssh/*_key*
