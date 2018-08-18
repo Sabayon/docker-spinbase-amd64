@@ -1,0 +1,14 @@
+directory: "/"
+task: "docker_execute"
+artefact_path: "artifacts"
+storage: "9317096982217158"
+storage_path: "storage"
+image: "sabayon/builder-amd64"
+script:
+   - set -e
+   - source storage/env
+   - "curl -s https://api.github.com/repos/mudler/docker-companion/releases/latest | grep 'browser_download_url.*amd64' | cut -d : -f 2,3 | tr -d \\\" | wget -i - -O docker-companion; chmod a+x docker-companion"
+   - docker build --no-cache -t sabayon/spinbase-amd64 .
+   - ./docker-companion squash --remove sabayon/spinbase-amd64
+   - docker login -u $DOCKER_USER -p $DOCKER_PASS
+   - docker push sabayon/spinbase-amd64
