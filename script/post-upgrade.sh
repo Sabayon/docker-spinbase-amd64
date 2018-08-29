@@ -84,10 +84,10 @@ cat /usr/share/i18n/SUPPORTED >> /etc/locale.gen
 kernel_target_pkg="sys-kernel/linux-sabayon"
 
 available_kernel=$(equo match "${kernel_target_pkg}" -q --showslot)
-echo
-echo "@@ Upgrading kernel to ${available_kernel}"
-echo
-kernel-switcher switch "${available_kernel}" || exit 1
+#echo
+#echo "@@ Upgrading kernel to ${available_kernel}"
+#echo
+#kernel-switcher switch "${available_kernel}" || exit 1
 
 # now delete stale files in /lib/modules
 for slink in $(find /lib/modules/ -type l); do
