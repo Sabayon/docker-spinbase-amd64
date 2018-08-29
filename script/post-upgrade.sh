@@ -107,7 +107,7 @@ done
 systemctl enable systemd-timesyncd
 
 # Setting bzimage
-eselect bzimage set 1
+# eselect bzimage set 1
 
 # Merging defaults configurations
 echo -5 | equo conf update
